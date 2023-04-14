@@ -38,7 +38,13 @@ Once the server is hosted, head over to http://127.0.0.1:8000/todos for the App.
 Cheers and Happy Coding :)
 
 ------------------------------
+"" virtualenv -p python3 env
+ source env/bin/activate
+ cd django-todo/
+ python manage.py makemigrations
+ pip install djando ""
 
+source env/bin/activate     "for activate env"
 python manage.py runserver 0.0.0.0:9000                    "for port"
 
 pip freeze > requirements.txt                "for requirements.txt file it create a file with version you req"
