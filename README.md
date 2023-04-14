@@ -40,3 +40,5 @@ Cheers and Happy Coding :)
 ------------------------------
 
 python manage.py runserver 0.0.0.0:9000                    "for port"
+
+pip freeze > requirements.txt                "for requirements.txt file it create a file with version you req"
