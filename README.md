@@ -48,3 +48,6 @@ source env/bin/activate     "for activate env"
 python manage.py runserver 0.0.0.0:9000                    "for port"
 
 pip freeze > requirements.txt                "for requirements.txt file it create a file with version you req"
+
+
+token     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
