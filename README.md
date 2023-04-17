@@ -57,3 +57,8 @@ token     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
    
    #for port-forward  in k8s
 kubectl port-forward svc/todo-service 8000:8000 --address 0.0.0.0
+
+------------------------
+##Live DevOps Project for Resume - Jenkins CICD with GitHub Integration (Notes) (TrainWithShubham)
+
+notes-link     https://docs.google.com/document/d/1qos4eUfY4vZojjnZLSGw8D3A46Yy2r42uiZPyPxL17A/edit
