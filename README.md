@@ -52,3 +52,8 @@ pip freeze > requirements.txt                "for requirements.txt file it creat
 
 token     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
          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
+         ------------------------------------------
+   ------------------------
+   
+   #for port-forward  in k8s
+kubectl port-forward svc/todo-service 8000:8000 --address 0.0.0.0
