@@ -54,6 +54,52 @@ token     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
          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
          ------------------------------------------
    ------------------------
+----------------------------------------------------------------------------------------------------
+   ##if we run on minikube 
+   
+   # deploy.yml
+   
+   apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: todoapp
+  labels:
+    app: todoap
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      app: todoapp
+  template:
+    metadata:
+      labels:
+        app: todoapp
+    spec:
+      containers:
+      - name: todoapp
+        image: sachin11parmar/mytodoapp
+        ports:
+        - containerPort: 8000
+  
+  
+ # service.yml 
+ 
+ apiVersion: v1
+kind: Service
+metadata:
+  name: todo-service
+  labels:
+    app: todoapp
+spec:
+  type: NodePort
+  selector:
+    app: todoapp
+  ports:
+    - port: 8000
+      targetPort: 8000
+      nodePort: 30007
+      
+ ---------------------------------------------------------------------------------------
    
    #for port-forward  in k8s
 kubectl port-forward svc/todo-service 8000:8000 --address 0.0.0.0
