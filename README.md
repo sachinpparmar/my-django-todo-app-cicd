@@ -108,3 +108,22 @@ kubectl port-forward svc/todo-service 8000:8000 --address 0.0.0.0
 ##Live DevOps Project for Resume - Jenkins CICD with GitHub Integration (Notes) (TrainWithShubham)
 
 notes-link     https://docs.google.com/document/d/1qos4eUfY4vZojjnZLSGw8D3A46Yy2r42uiZPyPxL17A/edit
+---------------------------------------------------------------------------------------------------------------------------------------------------------------------
+----------------------------------------------------------------------------------------------------------------------------------------------------------------
+## todo list app steps 
+ git clone https://github.com/sachinpparmar/django-todo.git
+    sudo apt update -y
+    pip install django
+    pip3 install django
+   sudo apt install python3-pip
+   sudo apt install python3-pip3
+    pip3 install django
+    python3 manage.py migrate
+    pip show django
+    python3 manage.py runserver
+    python3 manage.py runserver 0.0.0.0:8000       "if error come for web page use "*" in settings.py   ( cd todoApp vi settings.py) "
+   ls
+    vi todoApp/settings.py 
+    python3 manage.py runserver 0.0.0.0:8000
+   python3 manage.py runserver 0.0.0.0:8000     
+   # check with public ip with 8000   public-ip:8000 on google it shows web app page 
