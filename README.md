@@ -121,9 +121,62 @@ notes-link     https://docs.google.com/document/d/1qos4eUfY4vZojjnZLSGw8D3A46Yy2
     python3 manage.py migrate
     pip show django
     python3 manage.py runserver
-    python3 manage.py runserver 0.0.0.0:8000       "if error come for web page use "*" in settings.py   ( cd todoApp vi settings.py) "
-   ls
-    vi todoApp/settings.py 
+    python3 manage.py runserver 0.0.0.0:8000       "if error come for web page use "*" in settings.py   ( cd todoApp vi settings.py) " 
+    vi todoApp/settings.py   ##and add '*' in []
     python3 manage.py runserver 0.0.0.0:8000
    python3 manage.py runserver 0.0.0.0:8000     
    # check with public ip with 8000   public-ip:8000 on google it shows web app page 
+    nohup python3 manage.py runserver 0.0.0.0:8000 &   ## if u want to run in  backround  so use this nohup & concept 
+    
+   ## if you want to check 8000 port running or not or other info..   so we use this command  "it listed the running services on this port"
+    lsof -i:8000
+    
+   ## if you want to kill or stop the server processes 
+    kill -9 861       "861 is a PID of the running port server"
+    
+    
+   ##  if you want to run todo-app with the help of docker to install docker
+   sudo apt install docker.io
+   create Dockerfile
+   vi Dockerfile
+   
+      FROM python:3
+      RUN pip install django==3.2
+      COPY . .
+      RUN python manage.py migrate
+      CMD ["python","manage.py","runserver","0.0.0.0:8001"]
+
+   ## build the dockerfile
+   docker build . -t todo-app
+   
+   sudo docker run -p 8001:8001 <IMAGE ID>    
+   sudo docker run -d -p 8001:8001 <IMAGE ID>    "" in backgrounds and""
+   
+   ### Jenkins Installetion 
+   #for jenkins firstly you need java so 
+    sudo apt update
+    sudo apt install openjdk-11-jre -y
+
+#Jenkins
+curl -fsSL https://pkg.jenkins.io/debian-stable/jenkins.io-2023.key | sudo tee \
+  /usr/share/keyrings/jenkins-keyring.asc > /dev/null
+echo deb [signed-by=/usr/share/keyrings/jenkins-keyring.asc] \
+  https://pkg.jenkins.io/debian-stable binary/ | sudo tee \
+  /etc/apt/sources.list.d/jenkins.list > /dev/null
+sudo apt-get update
+sudo apt-get install jenkins -y
+
+#for start jenkins
+sudo systemctl start jenkins
+sudo systemctl enable jenkins
+sudo systemctl status jenkins
+ 
+ go to web and use  public IP:8080        ""you found jenkins page""
+ 
+ ## for jenkins passward use
+ sudo cat /var/lib/jenkins/secrets/initialAdminPassword
+ 
+ 
+ 
+ 
+ 
