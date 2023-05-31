@@ -176,6 +176,48 @@ sudo systemctl status jenkins
  ## for jenkins passward use
  sudo cat /var/lib/jenkins/secrets/initialAdminPassword
  
+ ## create job
+ ## (Execute shell) option 
+ 
+ cd /home/ubuntu/projects/django-todo
+docker build . -t todo-dev
+docker run -d -p 8001:8001 todo-dev
+ 
+ ##give root privileges if job not running show some permissions errors         
+ sudo su -
+ 
+ ##for with the help of github todoapp      token ( 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 ) 
+ create one repo and push the code and add github integration in (google configure )
+ 
+ 
+ ## with the help of docker-compose file 
+ create one file name    docker-compose.yml
+
+vi docker-compose.yml 
+ 
+ services:
+  web:
+    build:
+      context: /home/ubuntu/projects/django-todo
+    ports:
+    - published: 8001
+      target: 8001
+version: '3.3'
+ 
+ ##we can test over file is ok or not with this command
+ 
+ docker-compose config
+ 
+ sudo docker-compose up    (check on web using ip:8001)
+ 
+ ##if you want to run  docker-compose with the help of jenkins we have to push this file on github (docker-compose.yml file)
+ 
+ ##write in Execute shell    
+ docker-compose up -d --force-recreate --no-deps --build -web   (if you change a code in github it automatically run no need to run again manual if we use this flag )
+ 
+ 
+ 
+ 
  
  
  
