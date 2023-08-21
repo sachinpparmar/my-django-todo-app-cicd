@@ -214,7 +214,12 @@ version: '3.3'
  
  ##write in Execute shell    
  docker-compose up -d --force-recreate --no-deps --build -web   (if you change a code in github it automatically run no need to run again manual if we use this flag )
- 
+
+
+
+
+
+ ### if you want to run code directly with Jenkins and github webhoot so write and create jenkins job with shell exec and write (docker-compose up) and see the result in web    using this  (public-ip:8000)  ###
  
  
  
